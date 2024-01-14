@@ -32,7 +32,7 @@ public class StudentSteam implements Iterable<StudentGroup>{
 
     @Override
     public String toString() {
-        return "StudentSteam No: " + steamNo + ", group: " + group + ";";
+        return "StudentSteam No: " + steamNo + ", Кол-во групп в потоке: " + getGroup().size() + ", group: " + group + ";";
     }
 
     @Override

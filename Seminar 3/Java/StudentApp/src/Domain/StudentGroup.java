@@ -39,7 +39,7 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
     //Перезаписываем toString
     @Override
     public String toString() {
-        return "StudentGroup No " + id + ": " + studentList + ", groupId: " + id + ".";
+        return "StudentGroup No " + id + ": " + "Кол-во студентов в группе: " + this.getStudentList().size() + ", groupId: " + id + "\n Список студентов: \n" + studentList +  ".";
     }
 
 
@@ -60,6 +60,15 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
         if(o.getStudentList().size() < this.getStudentList().size()) {
             return 1;
         };
+
+        //Если кол-во студентов в группах одинаковое, то сравниваем по id группы
+        if(o.getId() > id) {
+            return 1;
+        }
+        if(o.getId() < id) {
+            return -1;
+        }
+
         return 0;
     }
     

@@ -36,15 +36,15 @@ public class App {
         list.add(student1);
         list.add(student2);
         list.add(student3);
-        list.add(student4);
-        list.add(student5);
-        list.add(student6);
+        list2.add(student4);
+        list2.add(student5);
+        list2.add(student6);
         list2.add(student7);
         list2.add(student8);
         list2.add(student9);
         list3.add(student10);
         list3.add(student11);
-        list2.add(student12);
+        list3.add(student12);
         
         //Создаем объекты класса StudentGroup
         StudentGroup group1 = new StudentGroup(list, 1);
@@ -67,7 +67,8 @@ public class App {
             System.out.println(student);
         }
 
-        System.out.println("---------Студенческий поток---------");
+        System.out.println("---------Студенческий поток---------------------");
+        
 
         //Создаем списки будущих потоков, состоящие из студенческих групп 
         List<StudentGroup> studentGroupList = new ArrayList<>();
@@ -78,12 +79,11 @@ public class App {
         //Создаем экземпляр класса StudentSteam
         StudentSteam steam1 = new StudentSteam(1, studentGroupList);
         
-        
         for (StudentGroup group : steam1) {
             System.out.println(group);
         }
 
-        System.out.println("-------Сортировка-------");
+        System.out.println("-------Сортировка---------------------");
 
         //Сортировка
         Collections.sort(steam1.getGroup());
@@ -92,5 +92,7 @@ public class App {
         for (StudentGroup group : steam1) {
             System.out.println(group);
         }
+
     }
+    
 }
