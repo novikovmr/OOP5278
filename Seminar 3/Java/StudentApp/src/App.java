@@ -32,7 +32,6 @@ public class App {
         List<Student> list = new ArrayList<>();
         List<Student> list2 = new ArrayList<>();
         List<Student> list3 = new ArrayList<>();
-        List<Student> list4 = new ArrayList<>();
 
         list.add(student1);
         list.add(student2);
@@ -86,8 +85,10 @@ public class App {
 
         System.out.println("-------Сортировка-------");
 
+        //Сортировка
         Collections.sort(steam1.getGroup());
 
+        //Перебираем студ. поток foreach
         for (StudentGroup group : steam1) {
             System.out.println(group);
         }

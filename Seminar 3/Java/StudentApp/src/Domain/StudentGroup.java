@@ -50,6 +50,7 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
         return new StudentIterator(studentList);
     }
 
+    //Перезаписываем compareTo
     @Override
     public int compareTo(StudentGroup o) {
         // TODO Auto-generated method stub
@@ -61,7 +62,5 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
         };
         return 0;
     }
-    
-    
     
 }
