@@ -5,13 +5,13 @@ import java.util.Iterator;
 import java.util.List;
 
 
-public class StudentGroup implements Iterable<Student> {
+public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup> {
     //Поля
     //Переменная, принимающая список
     private List<Student> studentList;
     //Переменная id
     private int id;
-
+    
     // Конструктор
     public StudentGroup(List<Student> studentList, int id) {
         this.studentList = studentList;
@@ -36,11 +36,10 @@ public class StudentGroup implements Iterable<Student> {
     }
 
 
-
     //Перезаписываем toString
     @Override
     public String toString() {
-        return "StudentGroup: " + studentList + ", id: " + id + ".";
+        return "StudentGroup No " + id + ": " + studentList + ", groupId: " + id + ".";
     }
 
 
@@ -49,6 +48,18 @@ public class StudentGroup implements Iterable<Student> {
     public Iterator<Student> iterator() {
         // TODO Auto-generated method stub
         return new StudentIterator(studentList);
+    }
+
+    @Override
+    public int compareTo(StudentGroup o) {
+        // TODO Auto-generated method stub
+        if (o.getStudentList().size() > this.getStudentList().size()){
+            return -1;
+        };
+        if(o.getStudentList().size() < this.getStudentList().size()) {
+            return 1;
+        };
+        return 0;
     }
     
     
