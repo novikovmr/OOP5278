@@ -8,6 +8,9 @@ import Domain.Student;
 import Domain.StudentGroup;
 import Domain.StudentSteam;
 import Domain.Teacher;
+import Services.EmployeService;
+import Services.StudentService;
+import Services.TeacherService;
 
 public class App {
     public static void main(String[] args) {
@@ -102,6 +105,33 @@ public class App {
         AccountController controller = new AccountController();
         controller.paySalary(t1, 50000);
         controller.paySalary(e1, 35000);
+        
+
+        //Создаем объекты классов-сервисов и используя метод create наполняем списки новыми сотрудниками/студентами
+
+        StudentService gr = new StudentService();
+        gr.create("Сергей", 20);
+        gr.create("Анна", 19);
+        gr.create("Максим", 22);
+        gr.create("Николай", 25);
+
+        EmployeService em = new EmployeService();
+        em.create("Александр", 50);
+        em.create("Светлана", 35);
+        em.create("Анастасия", 40);
+
+        TeacherService tch = new TeacherService();
+        tch.create("Олег", 47);
+        tch.create("Елена", 38);
+        tch.create("Сергей", 35);
+
+        //Создаем экземпляр класса AccountController
+
+        AccountController contr = new AccountController();
+
+        //Выводим списки студентов/работников со средним возрастом.
+
+        System.out.println("Студенты: \n" + gr.getAll() + '\n' + "Средний возраст студентов: " + contr.averageAge(gr.getAll()) + '\n' + "Работники: \n" + em.getAll() + '\n' + "Средний возраст работников: " + contr.averageAge(em.getAll()) + '\n' + "Преподователи: \n" + tch.getAll() + '\n' + "Средний возраст преподавателей: " + contr.averageAge(tch.getAll()) + '\n');
 
     }
     
