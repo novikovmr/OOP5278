@@ -16,4 +16,9 @@ public class ModelClass implements iGetModel{
         return students;
     }
 
+    @Override
+    public void deleteStudent(int removeNumb) {
+        students.remove(removeNumb);
+    }
+
 }

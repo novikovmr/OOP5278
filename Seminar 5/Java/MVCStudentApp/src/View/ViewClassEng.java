@@ -6,14 +6,14 @@ import java.util.Scanner;
 import Controller.Interfaces.iGetView;
 import Model.Domain.Student;
 
-public class ViewClass implements iGetView{
+public class ViewClassEng implements iGetView{
     public void printAllStudent(List<Student> students) {
-        System.out.println("----------------Список Студентов---------------------");
+        System.out.println("------------------Student List-------------------");
         for(Student s: students) 
         {
             System.out.println(s);
         }
-        System.out.println("------------------------------------------------------");
+        System.out.println("-------------------------------------------------");
     }
 
     public String prompt(String msg) {

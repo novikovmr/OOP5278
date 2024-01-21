@@ -1,12 +1,15 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import Controller.ControllerClass;
 import Controller.Interfaces.iGetModel;
 import Controller.Interfaces.iGetView;
 import Model.ModelClass;
+import Model.ModelClassHash;
 import Model.Domain.Student;
 import View.ViewClass;
+import View.ViewClassEng;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -39,16 +42,30 @@ public class App {
         studList.add(student9);
         studList.add(student10);
 
+        //Создаем мапу и заполняем ее студентами
+
+        HashMap<Integer, Student> studHash = new HashMap<>();
+        studHash.put(1, student1);
+        studHash.put(2, student2);
+        studHash.put(3, student3);
+        studHash.put(4, student4);
+        studHash.put(5, student5);
+        studHash.put(6, student6);
+        studHash.put(7, student7);
+        studHash.put(8, student8);
+
         // Создаем экземпляр класса ModelClass, передаем в него список студентов
 
         iGetModel model = new ModelClass(studList);
+        iGetModel modelHash = new ModelClassHash(studHash);
 
         // Создаем экземпляр класса ViewClass
 
         iGetView view = new ViewClass();
+        iGetView viewEng = new ViewClassEng();
 
         // Создаем экземпляр класса ControllerClass, передаем model и view
-        ControllerClass controller = new ControllerClass(model, view);
+        ControllerClass controller = new ControllerClass(modelHash, viewEng);
 
 
         //Вызываем метод run
