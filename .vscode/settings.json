@@ -1,5 +1,6 @@
 {
     "java.project.sourcePaths": [
-        "Seminar 5/Java/MVCStudentApp/src"
+        "Seminar 5/Java/MVCStudentApp/src",
+        "Seminar 6/Java/sem6/src"
     ]
 }
